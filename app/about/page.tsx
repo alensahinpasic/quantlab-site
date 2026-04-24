@@ -30,11 +30,37 @@ const pillars = [
   },
 ];
 
-const leadership = [
-  { role: 'President', name: 'Position Placeholder' },
-  { role: 'Research Director', name: 'Position Placeholder' },
-  { role: 'Head of Events', name: 'Position Placeholder' },
-  { role: 'Head of Industry Relations', name: 'Position Placeholder' },
+const divisions = [
+  {
+    name: 'Management',
+    members: [
+      { name: 'Alen Sahinpasic', role: 'President and Founder' },
+      { name: 'Uros Jez', role: 'Vice President' },
+    ],
+  },
+  {
+    name: 'Equity Research and Global Markets',
+    members: [
+      { name: 'Christoph Kurzbauer', role: 'Head of Equity Research and Global Markets' },
+    ],
+  },
+  {
+    name: 'Event Organisation',
+    members: [
+      { name: 'Mariia Avdokhina', role: 'Head of Organisation Team' },
+    ],
+  },
+  {
+    name: 'Business Law',
+    members: [
+      { name: 'Uros Jez', role: 'Head of Business Law Team' },
+    ],
+  },
+  {
+    name: 'AI and Tech',
+    members: [],
+    comingSoon: true,
+  },
 ];
 
 export default function AboutPage() {
@@ -183,7 +209,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Leadership */}
+      {/* Meet the Team */}
       <section className="bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6 py-20">
           <div className="mb-12">
@@ -191,19 +217,37 @@ export default function AboutPage() {
               Team
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-navy-900 tracking-tight">
-              Leadership
+              Meet the Team
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {leadership.map((l) => (
-              <div key={l.role} className="bg-white border border-slate-200 p-6">
-                <div className="w-12 h-12 bg-slate-100 mb-4 flex items-center justify-center">
-                  <svg className="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                </div>
-                <p className="text-navy-900 font-semibold text-sm mb-1">{l.role}</p>
-                <p className="text-slate-400 text-xs">{l.name}</p>
+          <div className="space-y-10">
+            {divisions.map((division) => (
+              <div key={division.name}>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400 mb-4 pb-3 border-b border-slate-200">
+                  {division.name}
+                </p>
+                {division.comingSoon ? (
+                  <div className="bg-white border border-dashed border-slate-200 p-6 max-w-xs">
+                    <p className="text-slate-400 text-sm">Coming soon</p>
+                  </div>
+                ) : (
+                  <div className="flex flex-wrap gap-4">
+                    {division.members.map((member) => (
+                      <div
+                        key={member.name + member.role}
+                        className="bg-white border border-slate-200 p-5 hover:border-navy-700 transition-colors duration-200 min-w-[200px]"
+                      >
+                        <div className="w-10 h-10 bg-navy-900 flex items-center justify-center mb-3">
+                          <span className="text-white text-xs font-bold">
+                            {member.name.split(' ').map((n) => n[0]).join('')}
+                          </span>
+                        </div>
+                        <p className="text-navy-900 font-semibold text-sm">{member.name}</p>
+                        <p className="text-slate-500 text-xs mt-0.5">{member.role}</p>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
