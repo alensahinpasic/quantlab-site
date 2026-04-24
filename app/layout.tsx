@@ -1,29 +1,7 @@
 import type { Metadata } from 'next';
-import { Inter, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-});
-
-const instrumentSerif = Instrument_Serif({
-  subsets: ['latin'],
-  variable: '--font-instrument',
-  weight: '400',
-  style: ['normal', 'italic'],
-  display: 'swap',
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  variable: '--font-jetbrains',
-  weight: ['400', '500'],
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: {
@@ -31,15 +9,15 @@ export const metadata: Metadata = {
     template: '%s | CEU Quant Lab',
   },
   description:
-    'CEU Quant Lab is a student-led applied finance and data research initiative at Central European University. We bridge academic learning and real-world finance through research, events, and industry engagement.',
+    'CEU Quant Lab is a structured analytical platform for projects, articles, and events across data, finance, and business.',
   keywords: [
     'CEU Quant Lab',
     'Central European University',
     'quantitative finance',
-    'applied research',
+    'applied projects',
     'finance student society',
-    'data science',
-    'market research',
+    'business strategy',
+    'articles',
     'CEU',
   ],
   openGraph: {
@@ -48,11 +26,16 @@ export const metadata: Metadata = {
     siteName: 'CEU Quant Lab',
     title: 'CEU Quant Lab',
     description:
-      'Applied finance, data science, and market research at Central European University.',
+      'Projects, articles, and events focused on applied analysis across data, finance, and business.',
   },
   robots: {
     index: true,
     follow: true,
+  },
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/icon.png',
   },
 };
 
@@ -62,10 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable} h-full`}
-    >
+    <html lang="en" className="h-full">
       <body className="min-h-full flex flex-col antialiased">
         <Navbar />
         <main className="flex-1">{children}</main>

@@ -1,225 +1,141 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
+import { EditorialHero, SectionHeading } from '@/components/Editorial';
+import { collaborators } from '@/lib/site-content';
 
 export const metadata: Metadata = {
   title: 'Partners',
   description:
-    'Partner with CEU Quant Lab. Explore opportunities for events, research collaboration, recruitment access, workshops, and sponsorship with our applied finance and data research initiative.',
+    'Work with CEU Quant Lab through university collaboration, speaker engagement, and educational resources.',
 };
 
-const opportunities = [
-  {
-    number: '01',
-    title: 'Events and Speaker Sessions',
-    description:
-      'Connect your professionals with our engaged membership through panel discussions, firm presentations, and industry talks. We organize structured events that create genuine dialogue between students and practitioners.',
-  },
-  {
-    number: '02',
-    title: 'Research Collaboration',
-    description:
-      'Co-develop applied research projects that combine our analytical capabilities with your firm\'s domain expertise. Collaborative output can take the form of white papers, data analysis, or sector reports.',
-  },
-  {
-    number: '03',
-    title: 'Recruitment Access',
-    description:
-      'Identify and engage analytically strong students through targeted recruitment events, case study sessions, and early talent pipelines. Our members are actively seeking careers in finance and related fields.',
-  },
-  {
-    number: '04',
-    title: 'Workshops and Case Studies',
-    description:
-      'Deliver hands-on learning experiences that expose students to real-world analytical problems and professional methodologies. Workshops can be tailored to your firm\'s technical focus areas.',
-  },
-  {
-    number: '05',
-    title: 'Sponsorship and Visibility',
-    description:
-      'Build institutional presence at CEU through sustained sponsorship of research initiatives, publications, and events. Sponsorship packages can be structured to align with your firm\'s engagement objectives.',
-  },
+const reasons = [
+  'Collaboration with CEU stakeholders supports projects, articles, and events.',
+  'Speaker engagement adds context to current work across the platform.',
+  'Educational resources add useful context for members interested in finance and investment topics.',
 ];
 
-const reasons = [
-  {
-    title: 'Analytically Prepared Members',
-    description:
-      'Our members come from economics, data science, and business programs, with a focus on quantitative methods and market analysis.',
-  },
-  {
-    title: 'Institutional Setting',
-    description:
-      'CEU is an internationally accredited research university with a strong economics faculty. Engagement through Quant Lab carries academic context.',
-  },
-  {
-    title: 'Direct Industry Access',
-    description:
-      'We facilitate direct access to student talent without the friction of large-scale campus recruiting events.',
-  },
-  {
-    title: 'Flexible Engagement',
-    description:
-      'Partnerships can range from a single speaker session to multi-year research collaboration, structured around your objectives.',
-  },
+const opportunities = [
+  'University collaboration',
+  'Industry and speaker engagement',
+  'Educational resources and learning opportunities',
+  'Contact and ongoing coordination',
 ];
 
 export default function PartnersPage() {
   return (
     <>
-      {/* Header */}
-      <section className="bg-navy-900 text-white">
-        <div className="max-w-7xl mx-auto px-6 py-16 md:py-20">
-          <p className="text-slate-400 text-xs font-semibold uppercase tracking-[0.2em] mb-4">
-            Industry and Academic Engagement
-          </p>
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-4">
-            Partners
-          </h1>
-          <p className="text-slate-400 text-base leading-relaxed max-w-xl">
-            We work with financial firms, academic institutions, and professional organizations
-            to connect students with the industry and advance applied research.
-          </p>
-        </div>
-      </section>
+      <EditorialHero
+        eyebrow="External engagement · partnerships"
+        title={
+          <>
+            University and External <em className="ql-accent-underline">Engagement.</em>
+          </>
+        }
+        subtitle="CEU Quant Lab works with university stakeholders, speakers, and external contributors in ways that support applied work across data, finance, and business."
+        panelLabel="Partner note"
+        panelQuote="Projects, articles, and events are strengthened by thoughtful collaboration and relevant educational resources."
+        panelMeta="University · Speakers · Educational Resources"
+        ctas={[
+          { href: '/contact', label: 'Start a conversation' },
+          { href: '/events', label: 'View events', variant: 'ghost' },
+        ]}
+      />
 
-      {/* Why Partner */}
-      <section className="bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            <div>
-              <p className="text-navy-700 text-xs font-semibold uppercase tracking-[0.2em] mb-4">
-                Why Partner With Us
-              </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-navy-900 tracking-tight mb-6">
-                A direct channel to analytically focused students
-              </h2>
-              <p className="text-slate-500 text-base leading-relaxed mb-4">
-                CEU Quant Lab is a focused, professionally oriented research initiative.
-                Our members are not passive recipients of career content: they produce
-                research, analyze markets, and actively prepare for roles in finance and
-                data-driven fields.
-              </p>
-              <p className="text-slate-500 text-base leading-relaxed">
-                Partnering with Quant Lab gives your organization access to this community
-                in a setting that rewards genuine engagement over generic outreach.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {reasons.map((r) => (
-                <div key={r.title} className="border border-slate-200 p-5 hover:border-navy-700 transition-colors duration-200">
-                  <h3 className="text-navy-900 font-semibold text-sm mb-2">{r.title}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">{r.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Partnership Opportunities */}
-      <section className="bg-slate-50 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 py-20">
-          <div className="mb-12">
-            <p className="text-navy-700 text-xs font-semibold uppercase tracking-[0.2em] mb-4">
-              How We Engage
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 tracking-tight max-w-xl">
-              Partnership opportunities
-            </h2>
-          </div>
-          <div className="space-y-4">
-            {opportunities.map((opp) => (
-              <div
-                key={opp.number}
-                className="bg-white border border-slate-200 p-6 hover:border-navy-700 hover:shadow-sm transition-all duration-200 flex gap-6 items-start"
-              >
-                <span className="text-navy-700 font-bold text-lg tabular-nums shrink-0 w-8">
-                  {opp.number}
-                </span>
-                <div>
-                  <h3 className="text-navy-900 font-semibold text-base mb-2">{opp.title}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed">{opp.description}</p>
-                </div>
-              </div>
+      <section className="ql-section" style={{ background: '#fff' }}>
+        <div className="ql-wrap">
+          <SectionHeading
+            number="01 — Why partner"
+            title="University collaboration"
+            copy="CEU Quant Lab works within the CEU environment and benefits from collaboration that supports applied work, relevant discussion, and coordinated activity."
+          />
+          <div className="ql-feature-grid">
+            {reasons.map((reason) => (
+              <article key={reason} className="ql-feature-card">
+                <div className="ql-feature-card__eyebrow">Focus</div>
+                <p className="ql-feature-card__copy">{reason}</p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Current Collaborators */}
-      <section className="bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-6 py-20">
-          <div className="mb-12">
-            <p className="text-navy-700 text-xs font-semibold uppercase tracking-[0.2em] mb-4">
-              Institutional Collaborators
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy-900 tracking-tight">
-              Current partnerships
-            </h2>
+      <section className="ql-section--tight" style={{ background: 'var(--paper)' }}>
+        <div className="ql-wrap">
+          <SectionHeading
+            number="02 — Opportunities"
+            title="Industry and speaker engagement"
+            copy="External engagement is most useful when it is clear, relevant, and connected to projects, articles, and applied work."
+          />
+          <div className="ql-notes-grid">
+            {opportunities.map((item, index) => (
+              <article key={item} className="ql-note-card">
+                <div className="ql-note-card__top">
+                  <span className="ql-note-card__kicker">Opportunity {index + 1}</span>
+                  <span className="ql-note-card__date">Open</span>
+                </div>
+                <div className="ql-note-card__body">
+                  <h2 className="ql-note-card__title">{item}</h2>
+                  <p className="ql-note-card__description">
+                    Structured to support applied work and discussion across data,
+                    finance, business, and strategy.
+                  </p>
+                </div>
+              </article>
+            ))}
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            <div className="border border-slate-200 p-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-slate-400 mb-3">
-                Academic Partner
-              </p>
-              <h3 className="text-navy-900 font-bold text-lg mb-3">CEU Career Services</h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                Quant Lab collaborates with CEU Career Services on career development
-                programming, professional skills workshops, and member preparation for
-                finance industry recruiting processes. This partnership ensures our
-                activities are aligned with institutional career support resources.
-              </p>
-            </div>
-            <div className="border border-slate-200 p-8">
-              <p className="text-xs font-semibold uppercase tracking-[0.15em] text-slate-400 mb-3">
-                Academic Partner
-              </p>
-              <h3 className="text-navy-900 font-bold text-lg mb-3">
-                CEU Department of Economics
-              </h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
-                We engage with the Department of Economics on research methodology,
-                quantitative approaches, and applied economic analysis. This academic
-                connection supports the rigor and credibility of our research output
-                and connects members with faculty expertise.
-              </p>
-            </div>
-          </div>
+        </div>
+      </section>
 
-          {/* CFA Resources Note */}
-          <div className="border border-slate-200 bg-slate-50 p-6 max-w-3xl">
-            <p className="text-navy-900 text-xs font-semibold uppercase tracking-[0.15em] mb-3">
-              Educational Resources
+      <section className="ql-section--tight" style={{ background: '#fff' }}>
+        <div className="ql-wrap">
+          <SectionHeading
+            number="03 — Resources"
+            title="CFA Institute Educational Resources"
+            copy="CEU Quant Lab also makes use of educational resources and learning opportunities relevant to members interested in investment and finance."
+          />
+          <div className="ql-cfa-note">
+            <Image
+              src="/cfa-institute-logo-student-clubs.jpg"
+              alt="CFA Institute logo"
+              width={640}
+              height={160}
+              className="ql-cfa-note__logo"
+            />
+            <div className="ql-cfa-note__eyebrow">CFA Institute Educational Resources</div>
+            <p>
+              CEU Quant Lab provides content and learning opportunities for students offered
+              by CFA Institute, the global leading association of investment professionals -
+              setting the standard for professional excellence.
             </p>
-            <p className="text-slate-600 text-sm leading-relaxed">
-              CEU Quant Lab has access to selected CFA Institute educational resources
-              for student learning and events, subject to CFA Institute trademark and
-              usage guidelines. CFA Institute is a registered trademark of CFA Institute.
-              CEU Quant Lab is not affiliated with, endorsed by, or sponsored by CFA Institute.
+            <p className="ql-cfa-note__fineprint">
+              CFA Institute and its logo are trademarks owned by CFA Institute. Use of CFA
+              Institute intellectual property is subject to CFA Institute trademark and
+              usage guidelines.
             </p>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-navy-900">
-        <div className="max-w-7xl mx-auto px-6 py-20">
-          <div className="max-w-2xl">
-            <p className="text-slate-400 text-xs font-semibold uppercase tracking-[0.2em] mb-4">
-              Start a Conversation
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-4">
-              Interested in partnering with CEU Quant Lab?
-            </h2>
-            <p className="text-slate-400 text-base leading-relaxed mb-8">
-              We work with firms across investment banking, asset management, consulting,
-              and financial technology. Reach out to discuss how a partnership can be
-              structured around your objectives.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center px-6 py-3 bg-white text-navy-900 text-sm font-semibold hover:bg-slate-100 transition-colors duration-150"
-            >
+      <section className="ql-section--tight" style={{ background: 'var(--paper)' }}>
+        <div className="ql-wrap">
+          <SectionHeading
+            number="04 — Contact"
+            title="Contact"
+            copy="If you would like to discuss collaboration, speaking opportunities, or related activity, please get in touch."
+          />
+          <div className="ql-feature-grid">
+            {collaborators.map((collaborator) => (
+              <article key={collaborator.name} className="ql-feature-card">
+                <div className="ql-feature-card__eyebrow">{collaborator.type}</div>
+                <h3 className="ql-feature-card__title">{collaborator.name}</h3>
+                <p className="ql-feature-card__copy">{collaborator.description}</p>
+              </article>
+            ))}
+          </div>
+          <div style={{ marginTop: 32 }}>
+            <Link href="/contact" className="ql-btn ql-btn--ghost">
               Contact Us
             </Link>
           </div>

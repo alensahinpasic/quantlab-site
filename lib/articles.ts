@@ -1,10 +1,11 @@
 export type Category =
-  | 'Market Insights'
+  | 'Market Analysis'
   | 'Equity Research'
   | 'AI in Finance'
   | 'Macroeconomics'
+  | 'Strategy'
   | 'Geopolitical Risk'
-  | 'Career Insights';
+  | 'Career Analysis';
 
 export interface Article {
   id: string;
@@ -24,7 +25,7 @@ export const articles: Article[] = [
     date: 'March 15, 2024',
     description:
       'An examination of how machine learning and large language models are reshaping trading strategies, risk modeling, and financial analysis across asset classes.',
-    author: 'Quant Lab Research Team',
+    author: 'CEU Quant Lab Research Team',
     slug: 'ai-future-financial-markets',
   },
   {
@@ -34,68 +35,80 @@ export const articles: Article[] = [
     date: 'February 28, 2024',
     description:
       'A data-driven analysis of how inflation surprises, central bank policy shifts, and supply disruptions transmit across equity sectors and fixed income markets.',
-    author: 'Quant Lab Research Team',
+    author: 'CEU Quant Lab Research Team',
     slug: 'macroeconomic-shocks-sectors',
   },
   {
     id: '3',
     title: 'Semiconductor Volatility and Market Regimes',
-    category: 'Market Insights',
+    category: 'Market Analysis',
     date: 'January 20, 2024',
     description:
       'Examining the outsized volatility of semiconductor equities and their role as a leading indicator for broader technology sector risk and market regime transitions.',
-    author: 'Quant Lab Research Team',
+    author: 'CEU Quant Lab Research Team',
     slug: 'semiconductor-volatility-market-regimes',
   },
   {
     id: '4',
-    title: 'Geopolitical Risk and Investor Sentiment',
-    category: 'Geopolitical Risk',
+    title: 'Operating Strategy in Fragmented Supply Chains',
+    category: 'Strategy',
     date: 'December 12, 2023',
     description:
-      'How geopolitical events are increasingly priced into equity markets, and what methodologies can help investors quantify and manage exposure to political uncertainty.',
-    author: 'Quant Lab Research Team',
-    slug: 'geopolitical-risk-investor-sentiment',
+      'A note on how firms in capital-intensive sectors are redesigning procurement, inventory, and pricing strategy under persistent uncertainty.',
+    author: 'CEU Quant Lab Research Team',
+    slug: 'operating-strategy-fragmented-supply-chains',
   },
   {
     id: '5',
-    title: 'What Students Should Know About Sales and Trading',
-    category: 'Career Insights',
-    date: 'November 8, 2023',
+    title: 'Geopolitical Risk and Investor Sentiment',
+    category: 'Geopolitical Risk',
+    date: 'November 28, 2023',
     description:
-      'A practical overview of the sales and trading division at investment banks, covering desk structures, recruiting timelines, technical expectations, and skill development.',
-    author: 'Quant Lab Research Team',
-    slug: 'sales-trading-career-guide',
+      'How geopolitical events are increasingly priced into equity markets, and what methodologies can help investors quantify and manage exposure to political uncertainty.',
+    author: 'CEU Quant Lab Research Team',
+    slug: 'geopolitical-risk-investor-sentiment',
   },
   {
     id: '6',
+    title: 'What Students Should Know About Sales and Trading',
+    category: 'Career Analysis',
+    date: 'November 8, 2023',
+    description:
+      'A practical overview of the sales and trading division at investment banks, covering desk structures, recruiting timelines, and technical expectations.',
+    author: 'CEU Quant Lab Research Team',
+    slug: 'sales-trading-career-guide',
+  },
+  {
+    id: '7',
     title: 'Building a Career in Quantitative Finance',
-    category: 'Career Insights',
+    category: 'Career Analysis',
     date: 'October 5, 2023',
     description:
-      'From mathematics to markets: a structured guide to the skills, certifications, and pathways for students pursuing quantitative roles in finance.',
-    author: 'Quant Lab Research Team',
+      'From mathematics to markets: a structured guide to certifications and pathways for quantitative roles in finance.',
+    author: 'CEU Quant Lab Research Team',
     slug: 'career-quantitative-finance',
   },
 ];
 
 export const CATEGORIES: Category[] = [
-  'Market Insights',
+  'Market Analysis',
   'Equity Research',
   'AI in Finance',
   'Macroeconomics',
+  'Strategy',
   'Geopolitical Risk',
-  'Career Insights',
+  'Career Analysis',
 ];
 
 export function getCategoryStyle(category: Category): string {
   const styles: Record<Category, string> = {
-    'Market Insights': 'bg-slate-100 text-slate-700',
-    'Equity Research': 'bg-indigo-50 text-indigo-700',
-    'AI in Finance': 'bg-purple-50 text-purple-700',
-    Macroeconomics: 'bg-teal-50 text-teal-700',
-    'Geopolitical Risk': 'bg-amber-50 text-amber-700',
-    'Career Insights': 'bg-emerald-50 text-emerald-700',
+    'Market Analysis': 'ql-filter-chip',
+    'Equity Research': 'ql-filter-chip',
+    'AI in Finance': 'ql-filter-chip',
+    Macroeconomics: 'ql-filter-chip',
+    Strategy: 'ql-filter-chip',
+    'Geopolitical Risk': 'ql-filter-chip',
+    'Career Analysis': 'ql-filter-chip',
   };
   return styles[category];
 }

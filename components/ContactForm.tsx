@@ -6,6 +6,7 @@ const inquiryTypes = [
   'General Inquiry',
   'Partnership',
   'Student Membership',
+  'Events',
   'Media / Articles',
 ];
 
@@ -32,14 +33,14 @@ export default function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="border border-slate-200 bg-slate-50 p-10 text-center">
-        <div className="w-10 h-10 bg-navy-900 flex items-center justify-center mx-auto mb-4">
+      <div className="ql-contact-form ql-contact-form--success">
+        <div className="ql-contact-form__check">
           <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-navy-900 font-semibold text-lg mb-2">Message Received</h3>
-        <p className="text-slate-500 text-sm leading-relaxed max-w-sm mx-auto">
+        <h3 className="ql-contact-form__success-title">Message received</h3>
+        <p className="ql-contact-form__success-copy">
           Thank you for reaching out. We will review your message and get back to you
           as soon as possible.
         </p>
@@ -48,11 +49,11 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+    <form onSubmit={handleSubmit} className="ql-contact-form">
+      <div className="ql-contact-form__grid">
         <div>
-          <label htmlFor="name" className="block text-xs font-semibold text-slate-600 uppercase tracking-wide mb-2">
-            Full Name <span className="text-red-400">*</span>
+          <label htmlFor="name" className="ql-form-label">
+            Full Name <span className="ql-form-required">*</span>
           </label>
           <input
             id="name"
@@ -62,12 +63,12 @@ export default function ContactForm() {
             value={form.name}
             onChange={handleChange}
             placeholder="Your full name"
-            className="w-full border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-navy-700 transition-colors"
+            className="ql-form-input"
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-xs font-semibold text-slate-600 uppercase tracking-wide mb-2">
-            Email Address <span className="text-red-400">*</span>
+          <label htmlFor="email" className="ql-form-label">
+            Email Address <span className="ql-form-required">*</span>
           </label>
           <input
             id="email"
@@ -77,14 +78,14 @@ export default function ContactForm() {
             value={form.email}
             onChange={handleChange}
             placeholder="your@email.com"
-            className="w-full border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-navy-700 transition-colors"
+            className="ql-form-input"
           />
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div className="ql-contact-form__grid">
         <div>
-          <label htmlFor="organization" className="block text-xs font-semibold text-slate-600 uppercase tracking-wide mb-2">
+          <label htmlFor="organization" className="ql-form-label">
             Organization
           </label>
           <input
@@ -94,12 +95,12 @@ export default function ContactForm() {
             value={form.organization}
             onChange={handleChange}
             placeholder="Company, university, or institution"
-            className="w-full border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-navy-700 transition-colors"
+            className="ql-form-input"
           />
         </div>
         <div>
-          <label htmlFor="inquiryType" className="block text-xs font-semibold text-slate-600 uppercase tracking-wide mb-2">
-            Inquiry Type <span className="text-red-400">*</span>
+          <label htmlFor="inquiryType" className="ql-form-label">
+            Inquiry Type <span className="ql-form-required">*</span>
           </label>
           <select
             id="inquiryType"
@@ -107,7 +108,7 @@ export default function ContactForm() {
             required
             value={form.inquiryType}
             onChange={handleChange}
-            className="w-full border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 focus:outline-none focus:border-navy-700 transition-colors appearance-none"
+            className="ql-form-input"
           >
             {inquiryTypes.map((t) => (
               <option key={t} value={t}>
@@ -119,8 +120,8 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-xs font-semibold text-slate-600 uppercase tracking-wide mb-2">
-          Message <span className="text-red-400">*</span>
+        <label htmlFor="message" className="ql-form-label">
+          Message <span className="ql-form-required">*</span>
         </label>
         <textarea
           id="message"
@@ -130,15 +131,12 @@ export default function ContactForm() {
           value={form.message}
           onChange={handleChange}
           placeholder="Please describe your inquiry in detail."
-          className="w-full border border-slate-300 bg-white px-4 py-3 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-navy-700 transition-colors resize-none"
+          className="ql-form-input ql-form-textarea"
         />
       </div>
 
-      <div className="pt-2">
-        <button
-          type="submit"
-          className="inline-flex items-center px-8 py-3 bg-navy-900 text-white text-sm font-semibold hover:bg-navy-800 transition-colors duration-150"
-        >
+      <div style={{ paddingTop: 8 }}>
+        <button type="submit" className="ql-btn ql-btn--primary">
           Send Message
         </button>
       </div>

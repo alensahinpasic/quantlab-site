@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'About Us',
+  title: 'About CEU Quant Lab',
   description:
-    'Learn about CEU Quant Lab — its mission, research philosophy, team, and approach to applied finance and data science at Central European University.',
+    'Learn about CEU Quant Lab — its mission, team, and approach to projects, articles, and events at Central European University.',
 };
 
 /* ── Geometric SVG decorations ── */
@@ -62,32 +62,31 @@ function AboutHero() {
           <div>
             <div className="ql-about-hero__meta">
               <span className="ql-about-hero__meta-dot" />
-              <span>About the Lab</span>
+              <span>Central European University</span>
               <span className="ql-about-hero__meta-sep" />
-              <span>Est. 2022</span>
+              <span>Est. 2025</span>
               <span className="ql-about-hero__meta-sep" />
-              <span>Budapest &middot; Vienna</span>
+              <span>Vienna</span>
             </div>
             <h1 className="ql-h1">
-              About <em className="ql-accent-underline">CEU Quant Lab.</em>
+              About <em className="ql-accent-underline">CEU&nbsp;Quant&nbsp;Lab</em>
             </h1>
             <p className="ql-about-hero__sub">
-              Applied finance, data science, and strategy at Central European University
-              — a research community that trains the next generation of analysts, consultants,
-              and builders to the standard of industry practice.
+              CEU Quant Lab is based at Central European University and focuses on
+              applied work across data, finance, and business.
             </p>
           </div>
 
           <aside className="ql-about-hero__card">
             <HeroGeometry />
             <div className="ql-about-hero__card-top">
-              <div className="ql-about-hero__card-label">Charter &middot; 2026</div>
+              <div className="ql-about-hero__card-label">Overview &middot; 2026</div>
             </div>
             <div className="ql-about-hero__card-bottom">
               <div className="ql-about-hero__card-body">
-                "Rigor over rhetoric. Evidence over opinion. Decisions, not decks."
+                "Projects, articles, and events that support applied work."
               </div>
-              <div className="ql-about-hero__card-meta">The Lab's operating principle</div>
+              <div className="ql-about-hero__card-meta">CEU Quant Lab&apos;s operating principle</div>
             </div>
           </aside>
         </div>
@@ -109,9 +108,8 @@ function Mission() {
             <div className="ql-mission__label">Our purpose</div>
           </div>
           <p className="ql-mission__quote">
-            Closing the gap between{' '}
-            <span className="ql-emph">academic theory</span> and real-world
-            decision-making across finance, strategy, and data.
+            Supporting work that applies classroom knowledge to real-world questions
+            across data, finance, business, and strategy.
           </p>
         </div>
       </div>
@@ -123,19 +121,19 @@ const pillars = [
   {
     n: '01',
     title: 'Analytical Rigor',
-    desc: 'Every conclusion is traceable to data, assumptions, and a reproducible model. We treat research like an auditor would.',
+    desc: 'We value clear reasoning, careful assumptions, and evidence-based analysis.',
     bullets: ['Peer review', 'Reproducible models', 'Clear assumptions'],
   },
   {
     n: '02',
-    title: 'Applied Learning',
-    desc: 'Members work on live problems — market notes, commissioned cases, partner briefs — not abstract classroom exercises.',
+    title: 'Applied Work',
+    desc: 'Members contribute to projects, articles, and events.',
     bullets: ['Live case work', 'Industry briefs', 'Shipped outputs'],
   },
   {
     n: '03',
     title: 'Strategic Thinking',
-    desc: 'Analysis is only useful when it drives a decision. We frame questions the way practitioners do: what to do, and why it matters.',
+    desc: 'We connect data and analysis to business context, communication, and decision-making.',
     bullets: ['Decision framing', 'Structured reasoning', 'Executive-level communication'],
   },
 ];
@@ -150,13 +148,11 @@ function HowWeWork() {
               <span className="ql-eyebrow-row__line" />
               <span className="ql-eyebrow-row__num">02 — How we work</span>
             </div>
-            <h2 className="ql-h2">
-              Three principles that run through everything we publish.
-            </h2>
+            <h2 className="ql-h2">How we work</h2>
           </div>
           <p>
-            The Lab is built on three operating principles — applied consistently
-            from desk notes to working papers to industry roundtables.
+            The same approach runs through projects, articles, and events, with
+            an emphasis on careful work, useful outputs, and clear communication.
           </p>
         </div>
         <div className="ql-pillars">
@@ -186,12 +182,12 @@ function Community() {
               <span className="ql-eyebrow-row__line" />
               <span className="ql-eyebrow-row__num">03 — The Community</span>
             </div>
-            <h2 className="ql-h2">A cross-disciplinary research community.</h2>
+            <h2 className="ql-h2">A cross-disciplinary contributor base.</h2>
           </div>
           <p>
-            Quant Lab brings together students across economics, finance, business,
-            data science and computer science — working alongside faculty and industry
-            to produce analysis that practitioners actually use.
+            CEU Quant Lab brings together members across economics, finance, business,
+            and data-related disciplines. Contributors collaborate across projects,
+            articles, and events in a structured setting.
           </p>
         </div>
       </div>
@@ -201,16 +197,15 @@ function Community() {
             className="ql-h2"
             style={{ fontSize: 'clamp(24px, 2.4vw, 32px)', marginBottom: 24 }}
           >
-            Built by students who want to work at the standard of industry.
+            Built around applied work and shared interests across related fields.
           </h2>
           <p>
-            Members come from across CEU's graduate programmes — many with prior
-            experience at banks, consultancies and technology firms — and share an
-            interest in using quantitative methods to answer real business questions.
+            Members come from across CEU and bring different academic
+            backgrounds and areas of interest to the group.
           </p>
           <p>
-            We work in small desks, publish under our own names, and hold each other
-            to a standard closer to a research firm than a student society.
+            The aim is to provide a setting where contributors can take part in
+            projects, articles, and events in a structured and collaborative way.
           </p>
           <div className="ql-community__tags">
             {['Finance', 'Consulting', 'Business', 'Technology', 'Data science'].map((t) => (
@@ -227,14 +222,14 @@ function Community() {
           <div className="ql-community__visual-content">
             <div className="ql-community__visual-kicker">By the numbers</div>
             <div className="ql-community__visual-headline">
-              Four desks. One standard. A shared room in Budapest.
+              Projects, articles, and events with a regional perspective.
             </div>
             <div className="ql-community__stats">
               {[
-                { num: '300', unit: '+', lbl: 'Participants across cohorts and live events' },
-                { num: '4', unit: '',   lbl: 'Research desks — Equity · Macro · Strategy · Data' },
-                { num: '12', unit: '',  lbl: 'Research notes published this year' },
-                { num: '2', unit: '',   lbl: 'CEU partners — Career Services and Economics' },
+                { num: '300', unit: '+', lbl: 'Participants across events and public activity' },
+                { num: '4', unit: '',   lbl: 'Focus areas across data, finance, business, and strategy' },
+                { num: '12', unit: '',  lbl: 'Articles and project outputs' },
+                { num: '2', unit: '',   lbl: 'CEU collaborators' },
               ].map((s) => (
                 <div key={s.lbl}>
                   <div className="ql-community__stat-num">
@@ -295,8 +290,8 @@ const gains = [
       </svg>
     ),
     title: 'Industry Exposure',
-    desc: 'Closed-door roundtables, mentor conversations, and direct introductions to partner firms.',
-    tags: 'Roundtables · Mentors · Intros',
+    desc: 'Events, articles, and collaborative work support a broader professional perspective across related fields.',
+    tags: 'Events · Articles · Projects',
   },
 ];
 
@@ -313,9 +308,8 @@ function Gains() {
             <h2 className="ql-h2">Skills that compound across careers.</h2>
           </div>
           <p>
-            Members leave the Lab with portfolios of published work, a working command
-            of the technical toolkit used in industry, and a network across finance,
-            consulting and technology.
+            The work provides scope for members to contribute to analysis,
+            articles, and events across data, finance, business, and strategy.
           </p>
         </div>
         <div className="ql-gains">
@@ -343,28 +337,28 @@ function Timeline() {
               <span className="ql-eyebrow-row__line" />
               <span className="ql-eyebrow-row__num">05 — Timeline</span>
             </div>
-            <h2 className="ql-h2">From first note to institutional partnership.</h2>
+            <h2 className="ql-h2">A brief timeline</h2>
           </div>
           <p>
-            A short history, the current state of the Lab, and the work ahead —
+            A short history, the current state of CEU Quant Lab, and the work ahead —
             kept intentionally brief.
           </p>
         </div>
         <div className="ql-timeline">
           <div className="ql-tcol">
             <div className="ql-tcol__year">
-              2022
+              September 2025
               <span className="ql-tcol__year-sub">Founded</span>
             </div>
-            <h3 className="ql-tcol__title">A reading group becomes a research lab.</h3>
+            <h3 className="ql-tcol__title">Founded at CEU in Vienna.</h3>
             <p className="ql-tcol__desc">
-              Founded by CEU graduate students in economics and business to bring
-              practitioner-grade analysis into the university.
+              Created to provide CEU members with a structured platform for applied
+              work across data, finance, and business.
             </p>
             <ul className="ql-tcol__list">
-              <li>First desk note published</li>
-              <li>Charter and editorial standards</li>
-              <li>Initial cohort of 22 members</li>
+              <li>Initial member-led activities</li>
+              <li>Early article and project work</li>
+              <li>Foundational organisation and membership</li>
             </ul>
           </div>
           <div className="ql-tcol">
@@ -372,15 +366,15 @@ function Timeline() {
               2026
               <span className="ql-tcol__year-sub">Today</span>
             </div>
-            <h3 className="ql-tcol__title">Four desks, institutional partnerships.</h3>
+            <h3 className="ql-tcol__title">Projects, articles, and events today.</h3>
             <p className="ql-tcol__desc">
-              Equity, Macro, Strategy and Data desks publishing regularly, working with
-              CEU Career Services and Economics, and hosting industry roundtables.
+              Focused on projects, articles, events, and collaboration with
+              university stakeholders.
             </p>
             <ul className="ql-tcol__list">
               <li>300+ participants across cohorts</li>
-              <li>Research notes published this year</li>
-              <li>Commissioned strategy case work</li>
+              <li>Articles and project outputs</li>
+              <li>Collaboration with CEU stakeholders</li>
             </ul>
           </div>
           <div className="ql-tcol">
@@ -388,15 +382,15 @@ function Timeline() {
               Next
               <span className="ql-tcol__year-sub">Future</span>
             </div>
-            <h3 className="ql-tcol__title">Alumni network and an annual review.</h3>
+            <h3 className="ql-tcol__title">Developing the next phase.</h3>
             <p className="ql-tcol__desc">
-              Expanding into a formal alumni network across finance and consulting, and
-              publishing an annual CEE research review alongside partner institutions.
+              Developing stronger project pipelines, more events, and a broader network
+              of members, alumni, and external contributors.
             </p>
             <ul className="ql-tcol__list">
-              <li>Alumni mentoring programme</li>
-              <li>Annual CEE review</li>
-              <li>Applied-AI research track</li>
+              <li>More project opportunities</li>
+              <li>Broader events calendar</li>
+              <li>Expanded alumni and contributor network</li>
             </ul>
           </div>
         </div>
@@ -439,7 +433,7 @@ const divisions = [
   },
 ];
 
-function MeetTheTeam() {
+function LeadershipAndTeam() {
   return (
     <section className="ql-team-section">
       <div className="ql-wrap">
@@ -449,11 +443,11 @@ function MeetTheTeam() {
               <span className="ql-eyebrow-row__line" />
               <span className="ql-eyebrow-row__num">06 — People</span>
             </div>
-            <h2 className="ql-h2">Meet the team.</h2>
+            <h2 className="ql-h2">Leadership and Team</h2>
           </div>
           <p>
-            The Lab is run by a small leadership team across research, events,
-            legal, and technology. Desk leads set the standard for their divisions.
+            CEU Quant Lab is supported by a small leadership team across projects,
+            events, legal, and technology.
           </p>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 40 }}>
@@ -511,21 +505,19 @@ function AboutCTA() {
       <div className="ql-wrap">
         <div className="ql-about-cta__grid">
           <div>
-            <div className="ql-about-cta__kicker">Join the Lab — Spring 2026 intake</div>
+            <div className="ql-about-cta__kicker">CEU Quant Lab · Spring 2026</div>
             <h2>
-              Develop skills for careers in{' '}
-              <em>finance, consulting, business, and technology.</em>
+              Contribute to work across <em>finance, business, and technology.</em>
             </h2>
           </div>
           <div className="ql-about-cta__aside">
             <p>
-              Members work on published research, commissioned industry cases and
-              applied-AI projects — graduating with a portfolio of work under their
-              own name.
+              Members contribute to projects, articles, and events while taking part
+              in a structured body of applied work.
             </p>
             <div className="ql-about-cta__ctas">
               <Link href="/contact" className="ql-btn ql-btn--on-dark">
-                Apply to join <Arrow />
+                Contact Us <Arrow />
               </Link>
               <Link href="/partners" className="ql-btn ql-btn--on-dark-ghost">
                 Partner with us
@@ -548,7 +540,7 @@ export default function AboutPage() {
       <Community />
       <Gains />
       <Timeline />
-      <MeetTheTeam />
+      <LeadershipAndTeam />
       <AboutCTA />
     </>
   );
